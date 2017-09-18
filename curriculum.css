@@ -1,0 +1,358 @@
+body {
+    margin: 0;
+}
+
+
+.navBar {
+    width: 100%;  /* i'm assuming full width */
+    height: 50px; /* change it to desired width */
+    display: inline;
+}
+.logo {
+    display: inline-block;
+    max-width: 90px;
+    height: auto;
+    padding-top: 10px;
+    margin-right: 20px;
+    padding-right: 50px;
+}
+
+
+.t-icon {
+    max-width: 50px;
+    height: auto;
+}
+
+.check {
+max-width: 25px;}
+
+.left-btn {
+    background: white;
+    color: #1194e6;
+    font-size: 1em;
+    font-weight: 100;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    text-transform:capitalize;
+    width: auto;
+    margin-left: 1em;
+    margin-right: 30px;
+    margin-bottom: 1em;
+
+}
+
+.left-btn:hover {
+    font-size-adjust: 1.2em;
+    font-weight: bold;
+}
+
+.left {
+    display: auto;
+    text-align: center;
+
+}
+
+.study-prog {
+  display: grid;
+}
+
+.text {
+			grid-column: 1 / -1;
+		}
+
+.overlay-img{
+    font-family: 'Raleway', sans-serif;
+    color: #f9f9f9;
+    font-size: 3em;
+    grid-column: 1 / -1;
+    text-align: right;
+}
+
+.extra-info{
+    font-family: 'Raleway', sans-serif;
+    color: #2c2c2c;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding-top: 30px;
+
+}
+
+.overlay-img p {
+    margin-top: 0;
+    font-size: 0.6em;
+    color: #1194e6;
+}
+
+.target-sem {
+    background-image: url(images/group.jpg);
+    background-size:cover;
+    font-family: 'Raleway', sans-serif;
+    padding: 50px;
+    grid-column: 1/3;
+    height: 400px;
+}
+
+
+
+.objectives {
+    margin-top:  30px;
+    padding: 50px;
+    font-family: 'Raleway', sans-serif;
+    grid-column: 3/-1;
+    height: auto;
+}
+
+.filter-sem {
+grid-column: 1/-1;
+    text-align: right;
+
+}
+
+.intro-txt{
+    padding-top: 5em;
+    font-family: 'Raleway', sans-serif;
+    color: #ffffff;
+    grid-column: 1 / -1;
+    text-align: center;
+
+}
+
+
+.text1 {
+        background-color: none;
+}
+
+.text2 {
+    background-color: none;
+    margin-left: 25em;
+    margin-right: 25em;
+}
+
+h3{
+    color: #2c2c2c;
+    font-size: 1em;
+    text-align: justify;
+    align-content: center;
+    font-weight: bolder;
+}
+
+.ects {
+    color: #1194e6;
+    text-align: justify;
+    margin: 0;
+}
+
+p{
+    color: #2c2c2c;
+}
+
+
+footer{
+        background-color: #2c2c2c;
+        height: 100px;
+    grid-area: ft;
+       padding-top: 50px;
+
+
+
+}
+
+footer a{
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    font-weight: 200;
+    display: block;
+    align-content: center;
+    text-align: center;
+    line-height: 30px;
+
+
+
+}
+
+
+@media (max-width: 900px) {
+
+.prog-descr{
+    font-family: 'Raleway', sans-serif;
+    color: #2a2a2a;
+    display: grid;
+    grid-area: h2;
+    font-size: 1em;
+    font-weight:400;
+    justify-content: center;
+    padding-top: 3em;
+    padding-bottom: 2em;
+    padding-left: 30px;
+    padding-right: 30px;
+
+
+}
+
+    .text2 {
+    background-color: none;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+    .navBar a {
+        background-color: white;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: #2a2a2a;
+    font-size: 0.6em;
+    display: none;
+
+    vertical-align: top;
+    margin-right: 10px;
+    line-height: 50px;    /* if you want it vertically middle of the navbar */
+}
+
+    .objectives {
+    margin-top:  0px;
+    padding: 50px;
+    font-family: 'Raleway', sans-serif;
+    grid-column: 3/-1;
+    height: auto;
+}
+
+}
+
+@media (min-width: 900px) {
+    main {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-areas:
+                    "hd  hd hd hd"
+                    "ul ul ul ul"
+                    "h2 h2 h2 h2"
+                    "sec sec sec sec"
+                    "teach teach teach teach"
+                    "ft ft ft ft";
+
+}
+
+.prog-descr{
+    font-family: 'Raleway', sans-serif;
+    color: #2a2a2a;
+    display: grid;
+    grid-area: h2;
+    font-size: 1em;
+    font-weight:400;
+    justify-content: center;
+    padding-top: 3em;
+    padding-bottom: 2em;
+    padding-left: 280px;
+    padding-right: 280px;
+
+
+}
+
+    .navBar a {
+
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: #2a2a2a;
+    font-size: 1em;
+    display: inline-block;
+    margin-right: 20px;
+       margin-left: 20px;
+    vertical-align: top;
+
+    line-height: 50px;    /* if you want it vertically middle of the navbar */
+}
+     .navBar a:hover {
+    border-top: 2px solid #2c2c2c;
+    }
+}
+
+header {
+
+        display: grid;
+        grid-area: hd;
+		height: 45px;
+        padding: 1.5em;
+        background-color: white;
+}
+
+
+.intro {
+        background-image: url(images/header2.jpg);
+        background-size: cover;
+
+        display: grid;
+        grid-area: ul;
+        height: 400px;
+        width: 100%;
+
+}
+
+
+
+.study-prog {
+/*        AMALIA  */
+    display: grid;
+    grid-area: sec;
+     grid-template-columns: repeat(4, 1fr);
+    align-items: flex-start;
+    /*       END AMALIA  */
+        padding: 30px 30px 30px 30px;
+            border-radius: .5em;
+		height: 35vh;
+		justify-content: center;
+
+		}
+
+#teaching {
+    margin-top: 50px;
+    background-color: #f8f8f8;
+    display: grid;
+    grid-area: teach;
+    padding-bottom: 50px;
+    padding-top: 20px;
+
+}
+
+.semester {
+background-image: url(images/header2.jpg);
+}
+
+article {
+    font-family: 'Raleway', sans-serif;
+        color: #fff;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+/*    AMALIA*/
+    padding: 1em 1em 1em 1em;
+    /*    END AMALIA*/
+
+		}
+
+    .teach{
+
+		display: grid;
+		grid-gap: 5px;
+        margin: 30px 30px 30px;;
+		grid-template-columns: repeat(1, 1fr);
+		/* grid-template-columns: repeat(auto-fill, 200px); */
+		grid-auto-rows: 1fr;
+        background-color: white;
+
+
+}
+
+.teach-p {
+    font-size: 1em;
+    text-align: justify;
+
+}
+
+
+
+
