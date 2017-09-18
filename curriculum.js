@@ -24,3 +24,34 @@
                     });
                 }
                 getData(subjectsDataSource);
+
+
+//active
+
+function removeActive(link){
+            link.classList.remove('active')
+        }
+        document.querySelector(".clickhome").onclick = function(e) {
+            document.querySelectorAll('.navBar a').forEach(removeActive);
+            e.target.classList.add('active');
+            }
+
+        document.querySelector(".clicksem").onclick = function(e) {
+            document.querySelectorAll('.navBar a').forEach(removeActive);
+            e.target.classList.add('active');
+            }
+
+        document.querySelector(".clickexam").onclick = function(e) {
+            document.querySelectorAll('.navBar a').forEach(removeActive);
+            e.target.classList.add('active');
+            }
+
+        document.querySelector(".clickintern").onclick = function(e) {
+            document.querySelectorAll('.navBar a').forEach(removeActive);
+            e.target.classList.add('active');
+            }
+
+        document.querySelector(".clickgoing").onclick = function(e) {
+            document.querySelectorAll('.navBar a').forEach(removeActive);
+            e.target.classList.add('active');
+            }
