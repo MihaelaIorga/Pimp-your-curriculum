@@ -236,6 +236,20 @@ footer a{
 
 }
 
+    .study-prog {
+/*        AMALIA  */
+    display: grid;
+    grid-area: sec;
+     grid-template-columns: repeat(4, 1fr);
+    align-items: flex-start;
+    /*       END AMALIA  */
+        padding: 30px 30px 30px 30px;
+            border-radius: .5em;
+		height: auto;
+		justify-content: center;
+
+		}
+
 .prog-descr{
     font-family: 'Raleway', sans-serif;
     color: #2a2a2a;
@@ -297,22 +311,9 @@ header {
 
 
 
-.study-prog {
-/*        AMALIA  */
-    display: grid;
-    grid-area: sec;
-     grid-template-columns: repeat(4, 1fr);
-    align-items: flex-start;
-    /*       END AMALIA  */
-        padding: 30px 30px 30px 30px;
-            border-radius: .5em;
-		height: 35vh;
-		justify-content: center;
 
-		}
 
 #teaching {
-    margin-top: 100px;
     background-color: #f8f8f8;
     display: grid;
     grid-area: teach;
