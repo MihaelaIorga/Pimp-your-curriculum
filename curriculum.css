@@ -2,7 +2,6 @@ body {
     margin: 0;
 }
 
-
 .navBar {
     width: 100%;  /* i'm assuming full width */
     height: 50px; /* change it to desired width */
@@ -74,8 +73,17 @@ max-width: 25px;}
     grid-column: 1 / -1;
     text-align: center;
     padding-top: 30px;
-    position: static;
 
+}
+
+.study-prog .extra-info{
+    font-family: 'Raleway', sans-serif;
+    color: #2c2c2c;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 2em;
+    padding-bottom: 15px;
 }
 
 .overlay-img p {
@@ -400,6 +408,7 @@ header {
         grid-area: ul;
         height: 400px;
         width: 100%;
+
 
 }
 

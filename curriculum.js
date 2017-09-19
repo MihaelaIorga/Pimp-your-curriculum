@@ -120,10 +120,10 @@ window.onscroll = function(e) {
   readout.innerHTML = stickPoint + '   ' + distance + '   ' + offset + '   ' + stuck;
   if ( (distance <= 0) && !stuck) {
     header.style.position = 'fixed';
-    header.style.top = '0px';
+      header.style.top = '0px';
     stuck = true;
   } else if (stuck && (offset <= stickPoint)){
-    h.style.position = 'static';
+      header.style.position = 'static';
     stuck = false;
   }
 }
