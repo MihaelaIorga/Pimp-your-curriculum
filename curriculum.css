@@ -111,6 +111,13 @@ max-width: 25px;}
     height: auto;
 }
 
+.target-sem h1, .semesterObjectives {
+    display:none;
+}
+.target-sem h1.visible, .semesterObjectives.visible {
+    display:block;
+}
+
 .filter-sem {
 grid-column: 1/-1;
     text-align: right;

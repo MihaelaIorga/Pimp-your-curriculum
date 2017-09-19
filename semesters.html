@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <main class="core-areas">
+    <main>
 
         <header id="header">
 
@@ -59,16 +59,8 @@
 
 
     </main>
-
-
-    <footer>
-
-        <a href="#">FAQ</a>
-        <a href="#">Contact us</a>
-
-    </footer>
-
-    <script>
+<script type="text/javascript" src="curriculum.js"></script>
+     <script>
         //left side variables
         let banner = document.querySelector('.target-sem');
         let bannerTemplate = document.querySelector('.leftSide').content;
@@ -193,52 +185,16 @@
         }
         getData(subjectsDataSource);
 
-
-        // toggleClass
-function toggleClass(elem, className) {
-	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
-    if (hasClass(elem, className)) {
-        while (newClass.indexOf(" " + className + " ") >= 0 ) {
-            newClass = newClass.replace( " " + className + " " , " " );
-        }
-        elem.className = newClass.replace(/^\s+|\s+$/g, '');
-    } else {
-        elem.className += ' ' + className;
-    }
-}
-
-theToggle.onclick = function() {
-   toggleClass(this, 'on');
-   return false;
-}
-
-
-//sticky header
-
-var header = document.getElementById("header");
-var readout = document.getElementsByTagName("section");
-var stuck = false;
-var stickPoint = getDistance();
-
-function getDistance() {
-  var topDist = header.offsetTop;
-  return topDist;
-}
-
-window.onscroll = function(e) {
-  var distance = getDistance() - window.pageYOffset;
-  var offset = window.pageYOffset;
-  readout.innerHTML = stickPoint + '   ' + distance + '   ' + offset + '   ' + stuck;
-  if ( (distance <= 0) && !stuck) {
-    header.style.position = 'fixed';
-      header.style.top = '0px';
-    stuck = true;
-  } else if (stuck && (offset <= stickPoint)){
-      header.style.position = 'static';
-    stuck = false;
-  }
-}
     </script>
+
+
+    <footer>
+
+        <a href="#">FAQ</a>
+        <a href="#">Contact us</a>
+
+    </footer>
+
 
 
 </body>
