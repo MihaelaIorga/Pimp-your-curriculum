@@ -1,0 +1,88 @@
+[{
+        "number": "1st and 2nd Semester",
+        "title": "Basic Production",
+        "credits": "60 ECTS",
+        "areas": [
+            {
+                "name": "Business",
+                "ects": "10 ECTS",
+                "description": "Within the business module of your studies, you will learn how to structure and execute projects"
+        }
+             ,
+
+            {
+                "name": "Communication",
+                "ects": "15 ECTS",
+                "description": "We teach you practical skills of how the social dynamics work in a digital world, and how to successfully conduct market analysis in digital space"
+                }
+        ,
+            {
+                "name": "Design",
+                "ects": "20 ECTS",
+                "description": "Understand the principles behind design execution, why it is important, and how to apply it"
+                }
+             ,
+            {
+                "name": "Frontend",
+                "ects": "15 ECTS",
+                "description": "What goes “behind the scenes” of functioning online platforms (websites) and bestow you with the knowledge to execute your ideas in real time."
+        }],
+        "exam": "External Examinator"
+
+        },
+    {
+        "number": "3rd Semester",
+        "title": "Advanced Production",
+        "credits": "30 ECTS",
+        "areas": [
+            {
+                "name": "Electives",
+                "ects": "10 ECTS",
+                "description": "Specialized teaching in each of the four areas of study. The electives will be cancelled iupon insufficient demand"
+        }
+             ,
+
+            {
+                "name": "Communication",
+                "ects": "5 ECTS",
+                "description": "We teach you practical skills of how the social dynamics work in a digital world, and how to successfully conduct market analysis in digital space"
+                }
+        ,
+            {
+                "name": "Design",
+                "ects": "5 ECTS",
+                "description": "Understand the principles behind design execution, why it is important, and how to apply it"
+                }
+             ,
+            {
+                "name": "Frontend",
+                "ects": "10 ECTS",
+                "description": "What goes “behind the scenes” of functioning online platforms (websites) and bestow you with the knowledge to execute your ideas in real time."
+        }],
+        "exam": "Internal Examinators"
+
+        },
+    {
+        "number": "4th Semester",
+        "title": "Pre-Graduate Scheme",
+        "credits": "30 ECTS",
+        "areas": [
+            {
+                "name": "Iternship",
+                "ects": "15 ECTS",
+                "description": "Practice your acquired skills in a professional environment tackling current market demands."
+        }
+             ,
+
+            {
+                "name": "Final Project",
+                "ects": "15 ECTS",
+                "description": "Create, produce and execute your idea as a group and pitch it in front of an external examinator who will asses the creativity and execution of your final project."
+                }
+],
+        "exam": "External Examinator"
+
+        }
+
+
+]
