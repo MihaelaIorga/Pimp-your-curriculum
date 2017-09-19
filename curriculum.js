@@ -104,13 +104,13 @@ theToggle.onclick = function() {
 
 //sticky header
 
-var h = document.getElementById("header");
+var header = document.getElementById("header");
 var readout = document.getElementsByTagName("div");
 var stuck = false;
 var stickPoint = getDistance();
 
 function getDistance() {
-  var topDist = h.offsetTop;
+  var topDist = header.offsetTop;
   return topDist;
 }
 
@@ -119,8 +119,8 @@ window.onscroll = function(e) {
   var offset = window.pageYOffset;
   readout.innerHTML = stickPoint + '   ' + distance + '   ' + offset + '   ' + stuck;
   if ( (distance <= 0) && !stuck) {
-    h.style.position = 'fixed';
-    h.style.top = '0px';
+    header.style.position = 'fixed';
+    header.style.top = '0px';
     stuck = true;
   } else if (stuck && (offset <= stickPoint)){
     h.style.position = 'static';

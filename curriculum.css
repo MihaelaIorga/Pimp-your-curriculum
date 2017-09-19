@@ -74,6 +74,7 @@ max-width: 25px;}
     grid-column: 1 / -1;
     text-align: center;
     padding-top: 30px;
+    position: static;
 
 }
 
