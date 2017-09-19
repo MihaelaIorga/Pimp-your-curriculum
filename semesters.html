@@ -1,67 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>MMD Curriculum</title>
-        <link rel="stylesheet" type="text/css" href="curriculum.css">
-		</head>
-		<body>
-            <main class="core-areas">
 
-    <header>
+<head>
+    <meta charset="UTF-8">
+    <title>MMD Curriculum</title>
+    <link rel="stylesheet" type="text/css" href="curriculum.css">
+</head>
 
-    <nav class="navBar">
+<body>
+    <main class="core-areas">
 
-        <img class="logo" src="images/kea.png" alt="logo">
-        <a class="clickhome" href="index.html">Home</a>
-        <a class="clicksem active" href="#">Semesters</a>
-        <a class="clickexam" href="exams.html">Exams</a>
-        <a class="clickintern" href="intern.html">Internship</a>
-        <a class="clickgoing" href="abroad.html">Going Abroad</a>
-    </nav>
+        <header id="header">
 
-    </header>
+        <a href="#menu" id="toggle"><span></span></a>
 
-                    <section class="filter-sem">
+    <nav id="menu" class="navBar">
 
-                    <button class="left-btn">First & Second </button>
+                <img class="logo" src="images/kea.png" alt="logo">
+                <a href="index.html">Home</a>
+                <a href="#">Semesters</a>
+                <a href="#">Exams</a>
+                <a href="#">Internship</a>
+                <a href="#">Going Abroad</a>
+            </nav>
 
-                    <button class="left-btn">Third</button>
+        </header>
 
-                    <button class="left-btn">Forth</button>
+        <section class="filter-sem">
 
-                    </section>
+            <button class="left-btn">First and Second </button>
 
+            <button class="left-btn">Third</button>
 
+            <button class="left-btn">Forth</button>
 
+        </section>
 
+        <section class="target-sem">
+        </section>
 
-                <section class="target-sem">
-                <h1 class="overlay-img">Multimedia Production Basic - Objectives<p>50 ECTS</p></h1>
-                </section>
+        <template class="leftSide">
+            <h1 class="overlay-img"><span>data-title</span> <span class="overlay-credits">data-credits</span></h1>
+        </template>
 
-                <section class="objectives">
-                    <p><img class="check" src="images/check.png" alt="logo"> Incorporate organisational aspects into multimedia development and use, and to plan, manage and carry out a development project</p>
-                    <p><img class="check" src="images/check.png" alt="logo"> Acquire the knowledge, skills and competencies needed to handle communication in relation to multimedia tasks</p>
-                    <p><img class="check" src="images/check.png" alt="logo"> Apply multimedia design and concept development principles on a methodological basis. The student is to acquire the skills needed to design and develop interactive user interfaces for central digital platforms on a methodological basis</p>
-                    <p class="teach-p"><img class="check" src="images/check.png" alt="logo"> Model, format, structure, document and implement dynamic multimedia applications. The student is to obtain a basic understanding of system development.</p>
-                </section>
+        <section class="objectives">
+        </section>
 
-                </main>
+        <template class="mainSubjects">
 
-<script type="text/javascript" src="curriculum.js"></script>
+            <p class="semester-subjects"><img class="check" src="images/check.png" alt="logo">
+                <span class="subject-title"> data-areas </span>
+                <span class="subject-description">data-areas</span>
+                <span class="subject-ects">data-areas</span>
+            </p>
+            <!--            <h3 class="semester-exam">data-exam</h3>-->
 
-             <footer>
-
-
-
-                <a href="#">FAQ</a>
-                <a href="#">Contact us</a>
-
+        </template>
 
 
-            </footer>
+    </main>
 
 
-		</body>
+    <footer>
+
+        <a href="#">FAQ</a>
+        <a href="#">Contact us</a>
+
+    </footer>
+
+    <script>
+        //left side variables
+        let banner = document.querySelector('.target-sem');
+        let bannerTemplate = document.querySelector('.leftSide').content;
+
+        //right side variables
+        let subjects = document.querySelector('.objectives');
+        let subjectsTemplate = document.querySelector('.mainSubjects').content;
+        let subjectsDataSource = "semester.json";
+
+        //JSON function
+        function getData(link) {
+            fetch(link).then(function (response) {
+                return response.json();
+            }).then(function (json) {
+                return show(json);
+            });
+        }
+        //nested forEach for arrays
+        function show(json) {
+            json.forEach(function (semester) {
+                //1st & second
+                let parent = document.createElement('div');
+
+                parent.classList.add('semesterObjectives')
+                semester.areas.forEach(function (area) {
+                    //business, interaction
+                    let clone = subjectsTemplate.cloneNode(true);
+
+                    clone.querySelector(".subject-title").textContent = area.name;
+                    clone.querySelector(".subject-ects").textContent = area.ects;
+                    clone.querySelector(".subject-description").textContent = area.description;
+
+                    // clone.querySelector(".semester-exam").textContent = semester.exam;
+
+                    // banner.appendChild(clone);
+
+
+                    parent.appendChild(clone);
+
+
+                });
+
+
+                let ex = document.createElement('h3');
+                ex.textContent = semester.exam;
+                parent.appendChild(ex)
+
+                let cloneLeft = bannerTemplate.cloneNode (true);
+
+                cloneLeft.querySelector(".overlay-img span").textContent = semester.title;
+                cloneLeft.querySelector(".overlay-credits").textContent = semester.credits;
+
+                document.querySelector('.target-sem').appendChild(cloneLeft)
+
+                subjects.appendChild(parent);
+            })
+            document.querySelector('.semesterObjectives').classList.add('visible')
+
+            document.querySelector('.target-sem h1').classList.add('visible')
+
+            let b1 = document.querySelector('.filter-sem .left-btn' );
+            let b2 = document.querySelector('.filter-sem .left-btn:nth-child(2)');
+            let b3 = document.querySelector('.filter-sem .left-btn:nth-child(3)');
+
+                let l1 = document.querySelector('.target-sem h1');
+                let l2 = document.querySelector('.target-sem h1:nth-child(2)');
+                let l3 = document.querySelector('.target-sem h1:nth-child(3)');
+
+            b1.addEventListener('click', function () {
+                let d1 = document.querySelector('.semesterObjectives');
+                let d2 = document.querySelector('.semesterObjectives:nth-child(2)');
+                let d3 = document.querySelector('.semesterObjectives:nth-child(3)');
+
+                let l1 = document.querySelector('.target-sem h1');
+                let l2 = document.querySelector('.target-sem h1:nth-child(2)');
+                let l3 = document.querySelector('.target-sem h1:nth-child(3)');
+
+                d2.classList.remove('visible');
+                d3.classList.remove('visible');
+                d1.classList.add('visible');
+
+                l2.classList.remove('visible');
+                l3.classList.remove('visible');
+                l1.classList.add('visible');
+            });
+
+            b2.addEventListener('click', function () {
+                let d1 = document.querySelector('.semesterObjectives');
+                let d2 = document.querySelector('.semesterObjectives:nth-child(2)');
+                let d3 = document.querySelector('.semesterObjectives:nth-child(3)');
+
+                let l1 = document.querySelector('.target-sem h1');
+                let l2 = document.querySelector('.target-sem h1:nth-child(2)');
+                let l3 = document.querySelector('.target-sem h1:nth-child(3)');
+
+                d1.classList.remove('visible');
+                d3.classList.remove('visible');
+                d2.classList.add('visible');
+
+                l1.classList.remove('visible');
+                l3.classList.remove('visible');
+                l2.classList.add('visible');
+            });
+
+            b3.addEventListener('click', function () {
+                let d1 = document.querySelector('.semesterObjectives');
+                let d2 = document.querySelector('.semesterObjectives:nth-child(2)');
+                let d3 = document.querySelector('.semesterObjectives:nth-child(3)');
+
+                let l1 = document.querySelector('.target-sem h1');
+                let l2 = document.querySelector('.target-sem h1:nth-child(2)');
+                let l3 = document.querySelector('.target-sem h1:nth-child(3)');
+
+                d1.classList.remove('visible');
+                d2.classList.remove('visible');
+                d3.classList.add('visible');
+
+                l1.classList.remove('visible');
+                l2.classList.remove('visible');
+                l3.classList.add('visible');
+            });
+        }
+        getData(subjectsDataSource);
+
+
+        // toggleClass
+function toggleClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+    if (hasClass(elem, className)) {
+        while (newClass.indexOf(" " + className + " ") >= 0 ) {
+            newClass = newClass.replace( " " + className + " " , " " );
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    } else {
+        elem.className += ' ' + className;
+    }
+}
+
+theToggle.onclick = function() {
+   toggleClass(this, 'on');
+   return false;
+}
+
+
+//sticky header
+
+var header = document.getElementById("header");
+var readout = document.getElementsByTagName("div");
+var stuck = false;
+var stickPoint = getDistance();
+
+function getDistance() {
+  var topDist = header.offsetTop;
+  return topDist;
+}
+
+window.onscroll = function(e) {
+  var distance = getDistance() - window.pageYOffset;
+  var offset = window.pageYOffset;
+  readout.innerHTML = stickPoint + '   ' + distance + '   ' + offset + '   ' + stuck;
+  if ( (distance <= 0) && !stuck) {
+    header.style.position = 'fixed';
+      header.style.top = '0px';
+    stuck = true;
+  } else if (stuck && (offset <= stickPoint)){
+      header.style.position = 'static';
+    stuck = false;
+  }
+}
+    </script>
+
+
+</body>
+
 </html>
