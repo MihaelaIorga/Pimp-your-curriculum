@@ -237,21 +237,20 @@ footer a{
 #menu {
   position: absolute;
   color: #999;
-  width: 100%;
+  width: 90%;
   height: 100vh;
   margin: 0;
     margin-top: 60px;
   font-family: 'Raleway', sans-serif;
     font-size: 1em;
-  text-align: center;
+  text-align: left;
   background: white;
   opacity: 0;
   visibility: hidden;
 }
 #menu:after {
   position: absolute;
-  top: -15px;
-  left: 95px;
+  left: 0px;
   content: "";
   display: block;
   border-left: 15px solid transparent;
@@ -271,8 +270,6 @@ footer a{
     text-decoration: none;
     font-size: 0.6em;
 list-style: none;
-        margin: 0;
-        padding: 0;
     display: block;
     margin-top: 40px;
     margin-left: 30%;
