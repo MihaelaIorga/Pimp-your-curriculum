@@ -55,3 +55,75 @@ function removeActive(link){
             document.querySelectorAll('.navBar a').forEach(removeActive);
             e.target.classList.add('active');
             }
+
+        //toggle menu
+
+        var theToggle = document.getElementById('toggle');
+
+// based on Todd Motto functions
+// https://toddmotto.com/labs/reusable-js/
+
+// hasClass
+function hasClass(elem, className) {
+	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
+// addClass
+function addClass(elem, className) {
+    if (!hasClass(elem, className)) {
+    	elem.className += ' ' + className;
+    }
+}
+// removeClass
+function removeClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+	if (hasClass(elem, className)) {
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+}
+// toggleClass
+function toggleClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+    if (hasClass(elem, className)) {
+        while (newClass.indexOf(" " + className + " ") >= 0 ) {
+            newClass = newClass.replace( " " + className + " " , " " );
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    } else {
+        elem.className += ' ' + className;
+    }
+}
+
+theToggle.onclick = function() {
+   toggleClass(this, 'on');
+   return false;
+}
+
+
+//sticky header
+
+var h = document.getElementById("header");
+var readout = document.getElementsByTagName("div");
+var stuck = false;
+var stickPoint = getDistance();
+
+function getDistance() {
+  var topDist = h.offsetTop;
+  return topDist;
+}
+
+window.onscroll = function(e) {
+  var distance = getDistance() - window.pageYOffset;
+  var offset = window.pageYOffset;
+  readout.innerHTML = stickPoint + '   ' + distance + '   ' + offset + '   ' + stuck;
+  if ( (distance <= 0) && !stuck) {
+    h.style.position = 'fixed';
+    h.style.top = '0px';
+    stuck = true;
+  } else if (stuck && (offset <= stickPoint)){
+    h.style.position = 'static';
+    stuck = false;
+  }
+}
