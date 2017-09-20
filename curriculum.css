@@ -106,11 +106,14 @@ position:relative;
 
 
 .objectives {
-    margin-top:  30px;
     padding: 50px;
     font-family: 'Raleway', sans-serif;
     grid-column: 3/-1;
     height: auto;
+}
+.subject-title{
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .target-sem h1, .semesterObjectives {
@@ -358,7 +361,8 @@ list-style: none;
 }
 
     h2 {
-        margin-top: 2.5em;
+        margin-top: 3em;
+        margin-bottom: 2em;
     }
 
     .target-sem {
