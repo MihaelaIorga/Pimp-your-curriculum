@@ -26,13 +26,14 @@
     </nav>
 
         </header>
+
         <section class="filter-sem">
 
-            <button class="left-btn">First and Second </button>
+            <button class="left-btn first active-filter">First and Second </button>
 
-            <button class="left-btn">Third</button>
+            <button class="left-btn third">Third</button>
 
-            <button class="left-btn">Forth</button>
+            <button class="left-btn forth">Forth</button>
 
         </section>
 
@@ -47,12 +48,12 @@
         </section>
 
         <template class="mainSubjects">
+            <span class="semester-subjects">
 
-            <p class="semester-subjects"><img class="check" src="images/check.png" alt="logo">
-                <span class="subject-title"> data-areas </span>
-                <span class="subject-description">data-areas</span>
-                <span class="subject-ects">data-areas</span>
-            </p>
+                    <h3 class="subject-title">data-areas</h3>
+                <p class="subject-description">data-areas</p>
+                <p class="subject-ects">data-areas</p>
+            </span>
             <!--            <h3 class="semester-exam">data-exam</h3>-->
 
         </template>
@@ -103,7 +104,7 @@
                 });
 
 
-                let ex = document.createElement('h3');
+                let ex = document.createElement('h2');
                 ex.textContent = semester.exam;
                 parent.appendChild(ex)
 
@@ -259,7 +260,23 @@ theToggle.onclick = function() {
    return false;
 }
 
+//active on filter sem
 
+function removeActive(link){
+            link.classList.remove('active-filter');
+        }
+        document.querySelector(".first").onclick = function(e) {
+            document.querySelectorAll('.filter-sem button').forEach(removeActive);
+            e.target.classList.add('active-filter');
+            }
+        document.querySelector(".third").onclick = function(e) {
+            document.querySelectorAll('.filter-sem button').forEach(removeActive);
+            e.target.classList.add('active-filter');
+            }
+        document.querySelector(".forth").onclick = function(e) {
+            document.querySelectorAll('.filter-sem button').forEach(removeActive);
+            e.target.classList.add('active-filter');
+            }
 
 
     </script>
