@@ -357,6 +357,10 @@ list-style: none;
 
 }
 
+    h2 {
+        margin-top: 2.5em;
+    }
+
     .target-sem {
     background-image: url(images/group.jpg);
     background-size:cover;
