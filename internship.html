@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MMD Curriculum</title>
+    <link rel="stylesheet" type="text/css" href="curriculum.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+
+        <header id="header">
+
+        <a href="#menu" id="toggle"><span></span></a>
+
+   <nav id="menu" class="navBar">
+
+        <img class="logo" src="images/kea.png" alt="logo">
+        <a class="clickhome" href="index.html">Home</a>
+        <a class="clicksem" href="semesters.html">Semesters</a>
+        <a class="clickintern" href="intern.html">Internship</a>
+        <a class="clickgoing active" href="#">Going Abroad</a>
+    </nav>
+
+        </header>
+
+        <div id="abroad">
+
+        </div>
+
+        <div class="objectives">
+
+            <h1 class="headline">KEA helps students find programmes at foreign educational institutions with learning objectives equivalent to the Multimedia Design and Communication programme.</h1>
+                 <p>
+                 The school may grant the transfer of programme elements according to this curriculum which are passed at another educational institution and which are equivalent to programme elements in this curriculum. If the programme element in question has been assessed according to the 7-point grading scale at the institution where the exam has been taken and is equivalent to a course in this curriculum, the grade may be transferred.
+
+                 </p>
+
+                 <p>
+                    The school may grant the transfer of programme elements completed at another Danish or foreign institution of higher education to replace programme elements covered by this curriculum. If a credit transfer is granted, programme elements are deemed to have been completed if they have been passed in accordance with the rules applicable to the programme in question. The assessment is transferred as ‘passed’.
+
+                 </p>
+
+                 <p>
+                 <strong>After completing the first-year exam, you can choose to complete either the entire programme or parts of it abroad.</strong> KEA Copenhagen School of Design and Technology offers multiple possibilities for international study, including the fourth-semester internship. Information on partner insti- tutions, international internships, credit transfer and procedures are published regularly by KEA Copenhagen School of Design and Technology.
+
+
+
+                 </p>
+
+
+
+
+            </div>
+
+
+    </main>
+     <script>
+//toggle menu
+
+        var theToggle = document.getElementById('toggle');
+
+// based on Todd Motto functions
+// https://toddmotto.com/labs/reusable-js/
+
+// hasClass
+function hasClass(elem, className) {
+	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
+// addClass
+function addClass(elem, className) {
+    if (!hasClass(elem, className)) {
+    	elem.className += ' ' + className;
+    }
+}
+// removeClass
+function removeClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+	if (hasClass(elem, className)) {
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+}
+// toggleClass
+function toggleClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+    if (hasClass(elem, className)) {
+        while (newClass.indexOf(" " + className + " ") >= 0 ) {
+            newClass = newClass.replace( " " + className + " " , " " );
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    } else {
+        elem.className += ' ' + className;
+    }
+}
+
+theToggle.onclick = function() {
+   toggleClass(this, 'on');
+   return false;
+}
+
+
+//sticky header
+
+var header = document.getElementById("header");
+var readout = document.getElementsByTagName("div");
+var stuck = false;
+var stickPoint = getDistance();
+
+function getDistance() {
+  var topDist = header.offsetTop;
+  return topDist;
+}
+
+window.onscroll = function(e) {
+  var distance = getDistance() - window.pageYOffset;
+  var offset = window.pageYOffset;
+  readout.innerHTML = stickPoint + '   ' + distance + '   ' + offset + '   ' + stuck;
+  if ( (distance <= 0) && !stuck) {
+    header.style.position = 'fixed';
+      header.style.top = '0px';
+    stuck = true;
+  } else if (stuck && (offset <= stickPoint)){
+      header.style.position = 'static';
+    stuck = false;
+  }
+}
+    </script>
+
+
+    <footer>
+
+        <a href="#">FAQ</a>
+        <a href="#">Contact us</a>
+
+    </footer>
+
+
+
+</body>
+
+</html>
