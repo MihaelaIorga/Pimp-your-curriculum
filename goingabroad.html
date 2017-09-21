@@ -19,18 +19,21 @@
 
         <img class="logo" src="images/kea.png" alt="logo">
         <a class="clickhome" href="index.html">Home</a>
-        <a class="clicksem active" href="semesters.html">Semesters</a>
+        <a class="clicksem" href="semesters.html">Semesters</a>
         <a class="clickexam" href="exams.html">Exams</a>
         <a class="clickintern" href="intern.html">Internship</a>
-        <a class="clickgoing" href="#">Going Abroad</a>
+        <a class="clickgoing active" href="#">Going Abroad</a>
     </nav>
 
         </header>
 
         <div id="abroad">
 
-                <h1>KEA helps students find programmes at foreign educational institutions with learning objectives equivalent to the Multimedia Design and Communication programme.</h1>
+        </div>
 
+        <div class="objectives">
+
+            <h1 class="headline">KEA helps students find programmes at foreign educational institutions with learning objectives equivalent to the Multimedia Design and Communication programme.</h1>
                  <p>
                  The school may grant the transfer of programme elements according to this curriculum which are passed at another educational institution and which are equivalent to programme elements in this curriculum. If the programme element in question has been assessed according to the 7-point grading scale at the institution where the exam has been taken and is equivalent to a course in this curriculum, the grade may be transferred.
 
@@ -42,7 +45,7 @@
                  </p>
 
                  <p>
-                 After completing the first-year exam, you can choose to complete either the entire programme or parts of it abroad. KEA Copenhagen School of Design and Technology offers multiple possibilities for international study, including the fourth-semester internship. Information on partner insti- tutions, international internships, credit transfer and procedures are published regularly by KEA Copenhagen School of Design and Technology.
+                 <strong>After completing the first-year exam, you can choose to complete either the entire programme or parts of it abroad.</strong> KEA Copenhagen School of Design and Technology offers multiple possibilities for international study, including the fourth-semester internship. Information on partner insti- tutions, international internships, credit transfer and procedures are published regularly by KEA Copenhagen School of Design and Technology.
 
 
 
@@ -56,227 +59,11 @@
 
     </main>
      <script>
-        //left side variables
-        let banner = document.querySelector('.target-sem');
-        let bannerTemplate = document.querySelector('.leftSide').content;
-
-        //right side variables
-        let subjects = document.querySelector('.objectives');
-        let subjectsTemplate = document.querySelector('.mainSubjects').content;
-        let subjectsDataSource = "semester.json";
-
-        //JSON function
-        function getData(link) {
-            fetch(link).then(function (response) {
-                return response.json();
-            }).then(function (json) {
-                return show(json);
-            });
-        }
-        //nested forEach for arrays
-        function show(json) {
-            json.forEach(function (semester) {
-                //1st & second
-                let parent = document.createElement('div');
-
-                parent.classList.add('semesterObjectives')
-                semester.areas.forEach(function (area) {
-                    //business, interaction
-                    let clone = subjectsTemplate.cloneNode(true);
-
-                    clone.querySelector(".subject-title").textContent = area.name;
-                    clone.querySelector(".subject-ects").textContent = area.ects;
-                    clone.querySelector(".subject-description").textContent = area.description;
-
-                    // clone.querySelector(".semester-exam").textContent = semester.exam;
-
-                    // banner.appendChild(clone);
-
-
-                    parent.appendChild(clone);
-
-
-                });
-
-
-                let ex = document.createElement('h2');
-                ex.textContent = semester.exam;
-                parent.appendChild(ex)
-
-                let cloneLeft = bannerTemplate.cloneNode (true);
-
-                cloneLeft.querySelector(".overlay-img span").textContent = semester.title;
-                cloneLeft.querySelector(".overlay-credits").textContent = semester.credits;
-
-                document.querySelector('.target-sem').appendChild(cloneLeft)
-
-                subjects.appendChild(parent);
-            })
-            document.querySelector('.semesterObjectives').classList.add('visible')
-
-            document.querySelector('.target-sem h1').classList.add('visible')
-
-            let b1 = document.querySelector('.filter-sem .left-btn' );
-            let b2 = document.querySelector('.filter-sem .left-btn:nth-child(2)');
-            let b3 = document.querySelector('.filter-sem .left-btn:nth-child(3)');
-
-                let l1 = document.querySelector('.target-sem h1');
-                let l2 = document.querySelector('.target-sem h1:nth-child(2)');
-                let l3 = document.querySelector('.target-sem h1:nth-child(3)');
-
-            b1.addEventListener('click', function () {
-                let d1 = document.querySelector('.semesterObjectives');
-                let d2 = document.querySelector('.semesterObjectives:nth-child(2)');
-                let d3 = document.querySelector('.semesterObjectives:nth-child(3)');
-
-                let l1 = document.querySelector('.target-sem h1');
-                let l2 = document.querySelector('.target-sem h1:nth-child(2)');
-                let l3 = document.querySelector('.target-sem h1:nth-child(3)');
-
-                d2.classList.remove('visible');
-                d3.classList.remove('visible');
-                d1.classList.add('visible');
-
-                l2.classList.remove('visible');
-                l3.classList.remove('visible');
-                l1.classList.add('visible');
-            });
-
-            b2.addEventListener('click', function () {
-                let d1 = document.querySelector('.semesterObjectives');
-                let d2 = document.querySelector('.semesterObjectives:nth-child(2)');
-                let d3 = document.querySelector('.semesterObjectives:nth-child(3)');
-
-                let l1 = document.querySelector('.target-sem h1');
-                let l2 = document.querySelector('.target-sem h1:nth-child(2)');
-                let l3 = document.querySelector('.target-sem h1:nth-child(3)');
-
-                d1.classList.remove('visible');
-                d3.classList.remove('visible');
-                d2.classList.add('visible');
-
-                l1.classList.remove('visible');
-                l3.classList.remove('visible');
-                l2.classList.add('visible');
-            });
-
-            b3.addEventListener('click', function () {
-                let d1 = document.querySelector('.semesterObjectives');
-                let d2 = document.querySelector('.semesterObjectives:nth-child(2)');
-                let d3 = document.querySelector('.semesterObjectives:nth-child(3)');
-
-                let l1 = document.querySelector('.target-sem h1');
-                let l2 = document.querySelector('.target-sem h1:nth-child(2)');
-                let l3 = document.querySelector('.target-sem h1:nth-child(3)');
-
-                d1.classList.remove('visible');
-                d2.classList.remove('visible');
-                d3.classList.add('visible');
-
-                l1.classList.remove('visible');
-                l2.classList.remove('visible');
-                l3.classList.add('visible');
-            });
-        }
-        getData(subjectsDataSource);
-
-         //active
-
-function removeActive(link){
-            link.classList.remove('active')
-        }
-        document.querySelector(".clickhome").onclick = function(e) {
-            document.querySelectorAll('.navBar a').forEach(removeActive);
-            e.target.classList.add('active');
-            }
-
-        document.querySelector(".clicksem").onclick = function(e) {
-            document.querySelectorAll('.navBar a').forEach(removeActive);
-            e.target.classList.add('active');
-            }
-
-        document.querySelector(".clickexam").onclick = function(e) {
-            document.querySelectorAll('.navBar a').forEach(removeActive);
-            e.target.classList.add('active');
-            }
-
-        document.querySelector(".clickintern").onclick = function(e) {
-            document.querySelectorAll('.navBar a').forEach(removeActive);
-            e.target.classList.add('active');
-            }
-
-        document.querySelector(".clickgoing").onclick = function(e) {
-            document.querySelectorAll('.navBar a').forEach(removeActive);
-            e.target.classList.add('active');
-            }
-
-        //toggle menu
-
-        var theToggle = document.getElementById('toggle');
-
-// based on Todd Motto functions
-// https://toddmotto.com/labs/reusable-js/
-
-// hasClass
-function hasClass(elem, className) {
-	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-}
-// addClass
-function addClass(elem, className) {
-    if (!hasClass(elem, className)) {
-    	elem.className += ' ' + className;
-    }
-}
-// removeClass
-function removeClass(elem, className) {
-	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
-	if (hasClass(elem, className)) {
-        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
-            newClass = newClass.replace(' ' + className + ' ', ' ');
-        }
-        elem.className = newClass.replace(/^\s+|\s+$/g, '');
-    }
-}
-// toggleClass
-function toggleClass(elem, className) {
-	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
-    if (hasClass(elem, className)) {
-        while (newClass.indexOf(" " + className + " ") >= 0 ) {
-            newClass = newClass.replace( " " + className + " " , " " );
-        }
-        elem.className = newClass.replace(/^\s+|\s+$/g, '');
-    } else {
-        elem.className += ' ' + className;
-    }
-}
-
-theToggle.onclick = function() {
-   toggleClass(this, 'on');
-   return false;
-}
-
-//active on filter sem
-
-function removeActive(link){
-            link.classList.remove('active-filter');
-        }
-        document.querySelector(".first").onclick = function(e) {
-            document.querySelectorAll('.filter-sem button').forEach(removeActive);
-            e.target.classList.add('active-filter');
-            }
-        document.querySelector(".third").onclick = function(e) {
-            document.querySelectorAll('.filter-sem button').forEach(removeActive);
-            e.target.classList.add('active-filter');
-            }
-        document.querySelector(".forth").onclick = function(e) {
-            document.querySelectorAll('.filter-sem button').forEach(removeActive);
-            e.target.classList.add('active-filter');
-            }
 
 //sticky header
 
 var header = document.getElementById("header");
-var readout = document.getElementsByTagName("section");
+var readout = document.getElementsByTagName("div");
 var stuck = false;
 var stickPoint = getDistance();
 
