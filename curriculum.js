@@ -41,6 +41,11 @@ function removeActive(link){
             e.target.classList.add('active');
             }
 
+         document.querySelector(".exam").onclick = function(e) {
+            document.querySelectorAll('.navBar a').forEach(removeActive);
+            e.target.classList.add('active');
+            }
+
 
         document.querySelector(".clickintern").onclick = function(e) {
             document.querySelectorAll('.navBar a').forEach(removeActive);
