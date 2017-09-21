@@ -395,6 +395,21 @@ list-style: none;
 }
 
 @media (min-width: 900px) {
+
+    .study-prog2 {
+        display: grid;
+    grid-area: sec;
+     grid-template-columns: repeat(4, 1fr);
+    align-items: flex-start;
+    /*       END AMALIA  */
+        padding: 50px 0px 50px 0px;
+		height: 500px;
+		justify-content: center;
+        z-index: 4;
+        width: 100%;
+        background-color: white;
+
+}
     main {
                 position: relative;
                 display: grid;
@@ -426,7 +441,7 @@ list-style: none;
 position: fixed;
     overflow: hidden;
   transform: translateY(43%);
-        z-index: 0;
+        z-index: -4;
 
 }
 
