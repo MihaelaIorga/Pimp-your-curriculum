@@ -20,8 +20,8 @@
             <nav id="menu" class="navBar">
 
                 <img class="logo" src="images/kea.png" alt="logo">
-                <a class="clickhome active" href="#">Home</a>
-                <a class="clicksem active" href="semesters.html">Semesters</a>
+                <a class="clickhome" href="index.html">Home</a>
+                <a class="clicksem active" href="#">Semesters</a>
                 <a class="clickexam" href="exams.html">Exams</a>
                 <a class="clickintern" href="intern.html">Internship</a>
                 <a class="clickgoing" href="goingabroad.html">Going Abroad</a>
@@ -212,6 +212,11 @@
         }
 
         document.querySelector(".clicksem").onclick = function (e) {
+            document.querySelectorAll('.navBar a').forEach(removeActive);
+            e.target.classList.add('active');
+        }
+
+        document.querySelector(".clickexam").onclick = function (e) {
             document.querySelectorAll('.navBar a').forEach(removeActive);
             e.target.classList.add('active');
         }
