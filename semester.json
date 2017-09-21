@@ -6,31 +6,30 @@
             {
                 "name": "Business",
                 "ects": "10 ECTS",
-                "description": "Within the business module of your studies, you will learn how to structure and execute projects"
+                "description": "Skills acquired: Assess the vision, mission and values of organisations in relation to multimedia productions."
         }
              ,
-
             {
                 "name": "Communication",
                 "ects": "15 ECTS",
-                "description": "We teach you practical skills of how the social dynamics work in a digital world, and how to successfully conduct market analysis in digital space"
+                "description": "Skills acquired: Collect and assess empirical data on target groups and situations to create a multimedia communication strategy."
                 }
         ,
             {
                 "name": "Design",
                 "ects": "20 ECTS",
-                "description": "Understand the principles behind design execution, why it is important, and how to apply it"
+                "description": "Skills acquired: Design user interfaces for different digital platforms based on key theory and assessment applying aesthetic styles."
                 }
              ,
             {
                 "name": "Frontend",
                 "ects": "15 ECTS",
-                "description": "What goes “behind the scenes” of functioning online platforms (websites) and bestow you with the knowledge to execute your ideas in real time."
+                "description": "Skills acquired: Program client and server-based multimedia solutions as well as assuring quality through testing and troubleshooting."
         }],
         "exam": "External Examinator",
         "examDescription": "You will attend an examination at the end of second semester. The examination type is external, meaning one teacher outside of your school will act as a sensor."
-
         },
+
     {
         "number": "3rd Semester",
         "title": "Advanced Production",
@@ -39,26 +38,26 @@
             {
                 "name": "Electives",
                 "ects": "10 ECTS",
-                "description": "Specialized teaching in each of the four areas of study. The electives will be cancelled iupon insufficient demand"
+                "description": "Elective subjects allow students to specialise within a particular academic/professional subject area."
         }
              ,
 
             {
                 "name": "Communication",
                 "ects": "5 ECTS",
-                "description": "We teach you practical skills of how the social dynamics work in a digital world, and how to successfully conduct market analysis in digital space"
+                "description": "Skills acquired: Collect and assess empirical data on target groups and situations to create a multimedia communication strategy."
                 }
         ,
             {
                 "name": "Design",
                 "ects": "5 ECTS",
-                "description": "Understand the principles behind design execution, why it is important, and how to apply it"
+                "description": "Skills acquired: Design user interfaces for different digital platforms based on key theory and assessment applying aesthetic styles."
                 }
              ,
             {
                 "name": "Frontend",
                 "ects": "10 ECTS",
-                "description": "What goes “behind the scenes” of functioning online platforms (websites) and bestow you with the knowledge to execute your ideas in real time."
+                "description": "Skills acquired: Program client and server-based multimedia solutions as well as assuring quality through testing and troubleshooting."
         }],
         "exam": "Internal Examinators",
         "examDescription": "Examination at the end of 3rd semester will be an internal assessment. Your knowledge will be judged based on your oral examination and presentation in your elective course for that semester"
