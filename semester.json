@@ -27,7 +27,8 @@
                 "ects": "15 ECTS",
                 "description": "What goes “behind the scenes” of functioning online platforms (websites) and bestow you with the knowledge to execute your ideas in real time."
         }],
-        "exam": "External Examinator"
+        "exam": "External Examinator",
+        "examDescription": "You will attend an examination at the end of second semester. The examination type is external, meaning one teacher outside of your school will act as a sensor."
 
         },
     {
@@ -59,7 +60,8 @@
                 "ects": "10 ECTS",
                 "description": "What goes “behind the scenes” of functioning online platforms (websites) and bestow you with the knowledge to execute your ideas in real time."
         }],
-        "exam": "Internal Examinators"
+        "exam": "Internal Examinators",
+        "examDescription": "Examination at the end of 3rd semester will be an internal assessment. Your knowledge will be judged based on your oral examination and presentation in your elective course for that semester"
 
         },
     {
@@ -80,7 +82,8 @@
                 "description": "Create, produce and execute your idea as a group and pitch it in front of an external examinator who will asses the creativity and execution of your final project."
                 }
 ],
-        "exam": "External Examinator"
+        "exam": "External Examinator",
+        "examDescription": "Final examination in which a report, presentation and examination is included. For this examination there will be an external evaluator present. You will get a grade based on the 7-point danish scale"
 
         }
 
