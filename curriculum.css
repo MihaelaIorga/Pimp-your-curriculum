@@ -255,6 +255,16 @@ footer a{
     transform: translateY(0%);
 }
 
+    #internship {
+     background-image: url(images/intern.jpg);
+    background-size:cover;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    padding: 50px;
+    width: 35em;
+    height: 320px;
+  transform: translateY(0%);
+}
 
     .target-sem {
     background-image: url(images/group.jpg);
