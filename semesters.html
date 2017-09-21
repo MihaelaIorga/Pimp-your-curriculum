@@ -25,7 +25,7 @@
                 <a class="clickexam" href="exams.html">Exams</a>
                 <a class="clickintern" href="intern.html">Internship</a>
                 <a class="clickgoing" href="goingabroad.html">Going Abroad</a>
-    </nav>
+            </nav>
 
 
         </header>
@@ -56,8 +56,8 @@
             <span class="semester-subjects">
 
                 <h3 class="subject-title">data-areas<span></span></h3>
-                <p class="subject-description">data-areas</p>
-                <p class="subject-ects">data-areas</p>
+            <p class="subject-description">data-areas</p>
+            <p class="subject-ects">data-areas</p>
             </span>
             <!--            <h3 class="semester-exam">data-exam</h3>-->
 
@@ -112,8 +112,8 @@
     </main>
     <footer>
 
-        <a href="#">FAQ</a>
-        <a href="#">Contact us</a>
+        <a href="http://www.kea.dk/da/studie-og-karrierevejledning/find-studievejleder/faq/">FAQ</a>
+        <a href="http://www.kea.dk/en/contact/">Contact us</a>
 
     </footer>
 
@@ -151,15 +151,10 @@
                     clone.querySelector(".subject-description").textContent = area.description;
 
                     // clone.querySelector(".semester-exam").textContent = semester.exam;
-
                     // banner.appendChild(clone);
 
-
                     parent.appendChild(clone);
-
-
                 });
-
 
                 let ex = document.createElement('h2');
                 ex.textContent = semester.exam;

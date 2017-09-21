@@ -1,35 +1,35 @@
 [
     {
-      "name": "Business",
+        "name": "Business",
         "ects": "20 ECTS",
         "icon": {
             "src": "images/progression.png"
         },
-      "description": "Within the business module of your studies, you will learn how to structure and execute projects, learn how to effectively communicate your needs, wants and goals and learn to present those goals to potential prospects or your colleagues and will learn in-depth ways of how to strategize business by adequately structuring project time to achieve a certain goal."
+        "description": "Within the business module of your studies, you will learn how to structure and execute projects, learn how to effectively communicate your needs, wants and goals and learn to present those goals to potential prospects or your colleagues and will learn in-depth ways of how to strategize business by adequately structuring project time to achieve a certain goal."
     },
-        {
-      "name": "Communication",
-            "ects": "20 ECTS",
+    {
+        "name": "Communication",
+        "ects": "20 ECTS",
         "icon": {
             "src": "images/presentation.png"
         },
-      "description": "Effectively, how we communicate to others (be it customer or colleague) can heavily impact on the final outcome, therefore, it is important that the rules of communications are mastered. Alongside of that, we teach you practical skills of how the social dynamics work in a digital world, and how to successfully conduct market analysis in digital space."
+        "description": "Effectively, how we communicate to others (be it customer or colleague) can heavily impact on the final outcome, therefore, it is important that the rules of communications are mastered. Alongside of that, we teach you practical skills of how the social dynamics work in a digital world, and how to successfully conduct market analysis in digital space."
     },
-        {
-      "name": "Design",
-            "ects": "20 ECTS",
+    {
+        "name": "Design",
+        "ects": "20 ECTS",
         "icon": {
             "src": "images/design.png"
         },
-      "description": "We teach you what it means to design, on the inside and out, and by the time you are finished with the design semester for this year you will be able to understand the principles behind design execution, why it is important, and how to apply it yourself in the future."
+        "description": "We teach you what it means to design, on the inside and out, and by the time you are finished with the design semester for this year you will be able to understand the principles behind design execution, why it is important, and how to apply it yourself in the future."
     },
-        {
-      "name": "Frontend",
-            "ects": "20 ECTS",
+    {
+        "name": "Frontend",
+        "ects": "20 ECTS",
         "icon": {
             "src": "images/practice.png"
         },
-      "description": "For some time, you will be learning what goes “behind the scenes” of functioning online platforms (websites) and bestow you with the knowledge to execute your ideas in real time.  Therefore, it is essential you have the knowledge that is necessary to communicate ideas and future steps in a language that is understandable both to the artist, and the programmer. "
+        "description": "For some time, you will be learning what goes “behind the scenes” of functioning online platforms (websites) and bestow you with the knowledge to execute your ideas in real time.  Therefore, it is essential you have the knowledge that is necessary to communicate ideas and future steps in a language that is understandable both to the artist, and the programmer. "
     }
 
 ]

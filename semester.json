@@ -9,7 +9,6 @@
                 "description": "Within the business module of your studies, you will learn how to structure and execute projects"
         }
              ,
-
             {
                 "name": "Communication",
                 "ects": "15 ECTS",
@@ -29,8 +28,8 @@
         }],
         "exam": "External Examinator",
         "examDescription": "You will attend an examination at the end of second semester. The examination type is external, meaning one teacher outside of your school will act as a sensor."
-
         },
+
     {
         "number": "3rd Semester",
         "title": "Advanced Production",
