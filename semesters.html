@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MMD Curriculum</title>
     <link rel="stylesheet" type="text/css" href="curriculum.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
 </head>
 
 <body>
@@ -13,17 +15,17 @@
 
         <header id="header">
 
-        <a href="#menu" id="toggle"><span></span></a>
+            <a href="#menu" id="toggle"><span></span></a>
 
-   <nav id="menu" class="navBar">
+            <nav id="menu" class="navBar">
 
-        <img class="logo" src="images/kea.png" alt="logo">
-        <a class="clickhome" href="index.html">Home</a>
-        <a class="clicksem active" href="#">Semesters</a>
-        <a class="clickexam" href="exams.html">Exams</a>
-        <a class="clickintern" href="intern.html">Internship</a>
-        <a class="clickgoing" href="abroad.html">Going Abroad</a>
-    </nav>
+                <img class="logo" src="images/kea.png" alt="logo">
+                <a class="clickhome" href="index.html">Home</a>
+                <a class="clicksem active" href="#">Semesters</a>
+                <a class="clickexam" href="exams.html">Exams</a>
+                <a class="clickintern" href="intern.html">Internship</a>
+                <a class="clickgoing" href="abroad.html">Going Abroad</a>
+            </nav>
 
         </header>
 
@@ -38,9 +40,11 @@
         </section>
 
         <section class="target-sem">
+
         </section>
 
         <template class="leftSide">
+
             <h1 class="overlay-img"><span>data-title</span> <span class="overlay-credits">data-credits</span></h1>
         </template>
 
@@ -50,7 +54,7 @@
         <template class="mainSubjects">
             <span class="semester-subjects">
 
-                    <h3 class="subject-title">data-areas</h3>
+                <h3 class="subject-title">data-areas<span></span></h3>
                 <p class="subject-description">data-areas</p>
                 <p class="subject-ects">data-areas</p>
             </span>
@@ -60,7 +64,14 @@
 
 
     </main>
-     <script>
+    <footer>
+
+        <a href="#">FAQ</a>
+        <a href="#">Contact us</a>
+
+    </footer>
+
+    <script>
         //left side variables
         let banner = document.querySelector('.target-sem');
         let bannerTemplate = document.querySelector('.leftSide').content;
@@ -108,7 +119,11 @@
                 ex.textContent = semester.exam;
                 parent.appendChild(ex)
 
-                let cloneLeft = bannerTemplate.cloneNode (true);
+                let exDescr = document.createElement('p');
+                exDescr.textContent = semester.examDescription;
+                parent.appendChild(exDescr)
+
+                let cloneLeft = bannerTemplate.cloneNode(true);
 
                 cloneLeft.querySelector(".overlay-img span").textContent = semester.title;
                 cloneLeft.querySelector(".overlay-credits").textContent = semester.credits;
@@ -121,13 +136,13 @@
 
             document.querySelector('.target-sem h1').classList.add('visible')
 
-            let b1 = document.querySelector('.filter-sem .left-btn' );
+            let b1 = document.querySelector('.filter-sem .left-btn');
             let b2 = document.querySelector('.filter-sem .left-btn:nth-child(2)');
             let b3 = document.querySelector('.filter-sem .left-btn:nth-child(3)');
 
-                let l1 = document.querySelector('.target-sem h1');
-                let l2 = document.querySelector('.target-sem h1:nth-child(2)');
-                let l3 = document.querySelector('.target-sem h1:nth-child(3)');
+            let l1 = document.querySelector('.target-sem h1');
+            let l2 = document.querySelector('.target-sem h1:nth-child(2)');
+            let l3 = document.querySelector('.target-sem h1:nth-child(3)');
 
             b1.addEventListener('click', function () {
                 let d1 = document.querySelector('.semesterObjectives');
@@ -185,133 +200,128 @@
         }
         getData(subjectsDataSource);
 
-         //active
+        //active
 
-function removeActive(link){
+        function removeActive(link) {
             link.classList.remove('active')
         }
-        document.querySelector(".clickhome").onclick = function(e) {
+        document.querySelector(".clickhome").onclick = function (e) {
             document.querySelectorAll('.navBar a').forEach(removeActive);
             e.target.classList.add('active');
-            }
+        }
 
-        document.querySelector(".clicksem").onclick = function(e) {
+        document.querySelector(".clicksem").onclick = function (e) {
             document.querySelectorAll('.navBar a').forEach(removeActive);
             e.target.classList.add('active');
-            }
+        }
 
-        document.querySelector(".clickexam").onclick = function(e) {
+        document.querySelector(".clickexam").onclick = function (e) {
             document.querySelectorAll('.navBar a').forEach(removeActive);
             e.target.classList.add('active');
-            }
+        }
 
-        document.querySelector(".clickintern").onclick = function(e) {
+        document.querySelector(".clickintern").onclick = function (e) {
             document.querySelectorAll('.navBar a').forEach(removeActive);
             e.target.classList.add('active');
-            }
+        }
 
-        document.querySelector(".clickgoing").onclick = function(e) {
+        document.querySelector(".clickgoing").onclick = function (e) {
             document.querySelectorAll('.navBar a').forEach(removeActive);
             e.target.classList.add('active');
-            }
+        }
 
         //toggle menu
 
         var theToggle = document.getElementById('toggle');
 
-// based on Todd Motto functions
-// https://toddmotto.com/labs/reusable-js/
+        // based on Todd Motto functions
+        // https://toddmotto.com/labs/reusable-js/
 
-// hasClass
-function hasClass(elem, className) {
-	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-}
-// addClass
-function addClass(elem, className) {
-    if (!hasClass(elem, className)) {
-    	elem.className += ' ' + className;
-    }
-}
-// removeClass
-function removeClass(elem, className) {
-	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
-	if (hasClass(elem, className)) {
-        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
-            newClass = newClass.replace(' ' + className + ' ', ' ');
+        // hasClass
+        function hasClass(elem, className) {
+            return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
         }
-        elem.className = newClass.replace(/^\s+|\s+$/g, '');
-    }
-}
-// toggleClass
-function toggleClass(elem, className) {
-	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
-    if (hasClass(elem, className)) {
-        while (newClass.indexOf(" " + className + " ") >= 0 ) {
-            newClass = newClass.replace( " " + className + " " , " " );
+        // addClass
+        function addClass(elem, className) {
+            if (!hasClass(elem, className)) {
+                elem.className += ' ' + className;
+            }
         }
-        elem.className = newClass.replace(/^\s+|\s+$/g, '');
-    } else {
-        elem.className += ' ' + className;
-    }
-}
+        // removeClass
+        function removeClass(elem, className) {
+            var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+            if (hasClass(elem, className)) {
+                while (newClass.indexOf(' ' + className + ' ') >= 0) {
+                    newClass = newClass.replace(' ' + className + ' ', ' ');
+                }
+                elem.className = newClass.replace(/^\s+|\s+$/g, '');
+            }
+        }
+        // toggleClass
+        function toggleClass(elem, className) {
+            var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, " ") + ' ';
+            if (hasClass(elem, className)) {
+                while (newClass.indexOf(" " + className + " ") >= 0) {
+                    newClass = newClass.replace(" " + className + " ", " ");
+                }
+                elem.className = newClass.replace(/^\s+|\s+$/g, '');
+            } else {
+                elem.className += ' ' + className;
+            }
+        }
 
-theToggle.onclick = function() {
-   toggleClass(this, 'on');
-   return false;
-}
+        theToggle.onclick = function () {
+            toggleClass(this, 'on');
+            return false;
+        }
 
-//active on filter sem
+        //active on filter sem
 
-function removeActive(link){
+        function removeActive(link) {
             link.classList.remove('active-filter');
         }
-        document.querySelector(".first").onclick = function(e) {
+        document.querySelector(".first").onclick = function (e) {
             document.querySelectorAll('.filter-sem button').forEach(removeActive);
             e.target.classList.add('active-filter');
-            }
-        document.querySelector(".third").onclick = function(e) {
+        }
+        document.querySelector(".third").onclick = function (e) {
             document.querySelectorAll('.filter-sem button').forEach(removeActive);
             e.target.classList.add('active-filter');
-            }
-        document.querySelector(".forth").onclick = function(e) {
+        }
+        document.querySelector(".forth").onclick = function (e) {
             document.querySelectorAll('.filter-sem button').forEach(removeActive);
             e.target.classList.add('active-filter');
+        }
+
+        //sticky header
+
+        var header = document.getElementById("header");
+        var readout = document.getElementsByTagName("section");
+        var stuck = false;
+        var stickPoint = getDistance();
+
+        function getDistance() {
+            var topDist = header.offsetTop;
+            return topDist;
+        }
+
+        window.onscroll = function (e) {
+            var distance = getDistance() - window.pageYOffset;
+            var offset = window.pageYOffset;
+            readout.innerHTML = stickPoint + '   ' + distance + '   ' + offset + '   ' + stuck;
+            if ((distance <= 0) && !stuck) {
+                header.style.position = 'fixed';
+                header.style.top = '0px';
+                stuck = true;
+            } else if (stuck && (offset <= stickPoint)) {
+                header.style.position = 'static';
+                stuck = false;
             }
-
-//sticky header
-
-var header = document.getElementById("header");
-var readout = document.getElementsByTagName("section");
-var stuck = false;
-var stickPoint = getDistance();
-
-function getDistance() {
-  var topDist = header.offsetTop;
-  return topDist;
-}
-
-window.onscroll = function(e) {
-  var distance = getDistance() - window.pageYOffset;
-  var offset = window.pageYOffset;
-  readout.innerHTML = stickPoint + '   ' + distance + '   ' + offset + '   ' + stuck;
-  if ( (distance <= 0) && !stuck) {
-    header.style.position = 'fixed';
-      header.style.top = '0px';
-    stuck = true;
-  } else if (stuck && (offset <= stickPoint)){
-      header.style.position = 'static';
-    stuck = false;
-  }
-}
+        }
     </script>
 
 
-    <footer>
 
-        <a href="#">FAQ</a>
-        <a href="#">Contact us</a>
-
-    </footer>
 
 
 
