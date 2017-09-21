@@ -52,6 +52,7 @@ position:relative;
     font-weight: bold;
 }
 
+
 .left {
     display: auto;
     text-align: center;
@@ -138,6 +139,13 @@ position:relative;
     margin-top: 100px;
 grid-column: 1/-1;
     text-align: right;
+
+}
+
+.filter-exam {
+    margin-top: 100px;
+grid-column: 1/-1;
+    text-align: center;
 
 }
 
