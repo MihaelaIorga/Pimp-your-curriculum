@@ -200,6 +200,19 @@ p{
     z-index: -2;
 }
 
+#internship {
+     background-image: url(images/intern.jpg);
+    background-size:cover;
+    font-family: 'Raleway', sans-serif;
+    position: fixed;
+    padding: 50px;
+    width: 35em;
+    height: 320px;
+    overflow: hidden;
+  transform: translateY(48%);
+    z-index: -2;
+}
+
 footer{
         background-color: #2c2c2c;
     width: 100%;
