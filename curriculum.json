@@ -1,7 +1,7 @@
 [
     {
       "name": "Business",
-        "ects": "20 ECTS",
+        "ects": "10 ECTS",
         "icon": {
             "src": "images/progression.png"
         },
@@ -17,7 +17,7 @@
     },
         {
       "name": "Design",
-            "ects": "20 ECTS",
+            "ects": "25 ECTS",
         "icon": {
             "src": "images/design.png"
         },
@@ -25,7 +25,7 @@
     },
         {
       "name": "Frontend",
-            "ects": "20 ECTS",
+            "ects": "25 ECTS",
         "icon": {
             "src": "images/practice.png"
         },
