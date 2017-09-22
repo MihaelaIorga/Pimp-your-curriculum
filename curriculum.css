@@ -186,6 +186,8 @@ p{
     color: #2c2c2c;
 }
 
+
+
 #abroad {
      background-image: url(images/abroad.jpg);
     background-size:cover;
@@ -279,7 +281,10 @@ footer a{
 
 }
 
+.jobs {
 
+transform: translateX(0);
+}
 
     /*Toggle menu start*/
 
@@ -417,6 +422,11 @@ list-style: none;
 }
 
 @media (min-width: 900px) {
+
+    .jobs {
+
+transform: translateX(25%);
+}
 
     .study-prog2 {
         display: grid;
